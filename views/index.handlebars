@@ -1,0 +1,83 @@
+<div class="container">
+	<div class="row">
+		<div class="col s6 offset-m3" id="top-bar">
+			<h1>EAT THE BURGERS</h1>
+			<p><img src="/assets/img/burger.jpg" width ="200" height = "auto" id=logoimage></p>
+		</div>
+	</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col s6 offset-m3"  id= "input">
+			<p> Create a Burger Below!</p>
+			<form action="/burgers/create" method="POST">
+				<input type="text" name="burger_name" class="form-control"
+				value="" id="input_field">
+				<br>
+				<button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br><br><br>
+		
+<div class="container">		
+		<div class="col-xs-6 text-center" id="currentburgers">
+			<div class="row">
+				{{#each burger_data}}
+					{{#unless this.devoured}}
+		
+			<div class="col-xs-6 text-center">
+				<pre>{{this.id}}. {{this.burger_name}}
+				</pre>
+			</div>
+		
+		<div class="col-xs-6 text-center">
+			<form class="button-size">
+				<input type="hidden" name="burger_id" type="text"
+				value={{this.id}}>
+				
+				<button type="submit" class="btn btn-primary">
+				DEVOUR IT</button>
+			</form>
+		</div>
+		{{/unless}}
+		{{/each}}
+	</div>
+</div>
+
+
+
+<div class="col-m-6" id="devoured">
+	<p> You have devoured these burgers!!</p>
+	{{#each burger_data}}
+		{{#if this.devoured}}
+			<input class="form-control" type="text" placeholder="
+				{{this.id}}. {{this.burger_name}}">
+				{{/if}}
+					{{/each}}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

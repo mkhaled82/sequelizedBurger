@@ -1,0 +1,25 @@
+#top-bar{
+	text-align: center;
+}
+
+
+
+#input{
+	margin-top: 50px;
+
+	text-align: center;
+}
+
+#input_field{
+	text-align: center;
+}
+
+#devoured{
+	margin-top: 50px;
+
+	text-align: center;
+}
+
+body{
+	background-color: #999;
+}
